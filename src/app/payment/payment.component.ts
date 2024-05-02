@@ -124,7 +124,7 @@ export class PaymentComponent {
         this.cardDetails = this.cardDetails.filter(card => card.cardId !== cardId);
        // alert('Card deleted successfully , please refresh and login again');
       },
-      (error) => {
+      (error) => { 
         alert('Card deleted successfully , please refresh and login again');
         //console.error('Error deleting card:', error);
         // Handle error
