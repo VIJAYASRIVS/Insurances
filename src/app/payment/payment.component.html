@@ -162,7 +162,7 @@
           <!-- Edit button -->
           <button (click)="openEditForm(card)">Edit</button>
           <!-- Delete button -->
-          <button (click)="deleteCard(card.cardId)">Delete</button>
+          <button class = "delete"(click)="deleteCard(card.cardId)">Delete</button>
         </td>
       </tr>
     </tbody>
@@ -221,7 +221,7 @@
       <input type="date" id="editValidity" name="editValidity" [(ngModel)]="editCardForm.validity" required>
     </div>
     <button type="submit">Save</button>
-    <button type="button" (click)="editFormVisible = false">Cancel</button>
+    <button type="button" class = "cancel"(click)="editFormVisible = false">Cancel</button>
   </form>
 </div>
 
