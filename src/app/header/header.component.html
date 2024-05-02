@@ -1,0 +1,31 @@
+<header> 
+    <div class = "container">
+        
+    
+    <h1><Strong>Insurance</Strong></h1>
+    <div class = "img2">
+    <img src = "https://www.ilink-digital.com/wp-content/uploads/2020/04/iLink-Digital-RGB-800px-e1587616464332.png">
+    </div>
+  <nav> 
+    <a routerLink="">Home</a>
+    <a routerLink="">About</a> 
+    
+    <!--<a (click)="handleclick()">Dashboard</a>--> 
+    <!--<a routerLink="dashboard">Dashboard</a>-->
+
+    <a routerLink="login" *ngIf="!isLoggedIn">Login</a>
+    <a routerLink="login" *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+    
+    
+
+  </nav>
+
+</div>
+
+</header>  
+
+
+
+<!--<div class = "img1">
+  <img src="https://png.pngtree.com/template/20190316/ourmid/pngtree-insurance-logo-vector-image_80257.jpg"> 
+  </div>-->  

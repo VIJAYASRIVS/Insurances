@@ -1,0 +1,233 @@
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Information Form</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Credit Card Information</h2>
+  <form id="credit-card-form">
+    <label for="card-owner">Card Owner Name</label>
+    <input type="text" id="card-owner" name="card-owner" required>
+    
+    <label for="card-number">Card Number</label>
+    <input type="text" id="card-number" name="card-number" pattern="\d{16}" required title="Please enter a 16-digit card number">
+    
+    <label for="valid-till">Valid Till (MM/YY)</label>
+    <input type="text" id="valid-till" name="valid-till" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" placeholder="MM/YY" required title="Please enter a valid expiration date (MM/YY)">
+    
+    <label for="security-code">Security Code (CVV/CVC)</label>
+    <input type="text" id="security-code" name="security-code" pattern="\d{3,4}" required title="Please enter a 3 or 4 digit security code">
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>--> 
+
+<!--<div class="container">
+    <div class="header">
+      <h2>Welcome to Our Credit Card Information Page</h2>
+    </div>
+  
+    <div class="form-container">
+      <div class="credit-card-form">
+        <h1>Credit Card Information</h1>
+        <form #creditCardForm="ngForm" (ngSubmit)="submitCreditCard(creditCardForm)" class="common-form" novalidate>
+          <input class="form-input" type="text" name="cardOwner" [(ngModel)]="creditCard.cardOwner" placeholder="Card Owner Name" required>
+          <div *ngIf="creditCardForm.controls['cardOwner'].hasError('required') && creditCardForm.controls['cardOwner'].touched" class="error">
+            *Card Owner Name is mandatory.
+          </div>
+  
+          <input class="form-input" type="text" name="cardNumber" [(ngModel)]="creditCard.cardNumber" placeholder="Card Number" required pattern="\d{16}">
+          <div *ngIf="creditCardForm.controls['cardNumber'].hasError('required') && creditCardForm.controls['cardNumber'].touched" class="error">
+            *Card Number is mandatory.
+          </div>
+          <div *ngIf="creditCardForm.controls['cardNumber'].hasError('pattern') && creditCardForm.controls['cardNumber'].touched" class="error">
+            *Invalid card number format. Please enter 16 digits.
+          </div>
+  
+          <input class="form-input" type="text" name="validTill" [(ngModel)]="creditCard.validTill" placeholder="Valid Till (MM/YY)" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}">
+          <div *ngIf="creditCardForm.controls['validTill'].hasError('required') && creditCardForm.controls['validTill'].touched" class="error">
+            *Valid Till is mandatory.
+          </div>
+          <div *ngIf="creditCardForm.controls['validTill'].hasError('pattern') && creditCardForm.controls['validTill'].touched" class="error">
+            *Invalid expiration date format. Please enter in MM/YY format.
+          </div>
+  
+          <input class="form-input" type="text" name="securityCode" [(ngModel)]="creditCard.securityCode" placeholder="Security Code (CVV/CVC)" required pattern="\d{3,4}">
+          <div *ngIf="creditCardForm.controls['securityCode'].hasError('required') && creditCardForm.controls['securityCode'].touched" class="error">
+            *Security Code is mandatory.
+          </div>
+          <div *ngIf="creditCardForm.controls['securityCode'].hasError('pattern') && creditCardForm.controls['securityCode'].touched" class="error">
+            *Invalid security code format. Please enter 3 or 4 digits.
+          </div>
+  
+          <button type="submit" class="form-button" [disabled]="creditCardForm.invalid">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div> -->
+  <form (ngSubmit)="makePayment()" #paymentForm="ngForm">
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" name="userId" [(ngModel)]="userId" required>
+    <label for="securityCode">Security Code:</label>
+    <input type="text" id="securityCode" name="securityCode" [(ngModel)]="securityCode" required>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <!--<div *ngIf="cardDetails">
+    <h2>Card Details</h2>
+    <ul>
+      <li *ngFor="let card of cardDetails">
+        <p>Card Owner Name: {{ card.cardOwnerName }}</p>
+        <p>Card Number: {{ card.cardNumber }}</p>
+        <p>Bank Name: {{ card.bankName }}</p>
+        <p>Validity: {{ card.validity }}</p>
+        <p>Card ID:{{card.cardId}}</p>
+
+        
+        
+      </li>
+    </ul>
+  </div>--> 
+
+  <div *ngIf="cardDetails && cardDetails.length > 0">
+  <h2>Card Details</h2>
+  <table class="card-table">
+    <thead>
+      <tr>
+        <th>Card Owner Name</th>
+        <th>Card Number</th>
+        <th>Bank Name</th>
+        <th>Validity</th>
+        <th>Card ID</th>
+        <th>Action</th> <!-- New column for buttons -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let card of cardDetails">
+        <td>{{ card.cardOwnerName }}</td>
+        <td>{{ card.cardNumber }}</td>
+        <td>{{ card.bankName }}</td>
+        <td>{{ card.validity }}</td>
+        <td>{{ card.cardId }}</td>
+        <td>
+          <!-- Edit button -->
+          <button (click)="openEditForm(card)">Edit</button>
+          <!-- Delete button -->
+          <button (click)="deleteCard(card.cardId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  
+  
+  <button (click)="toggleAddCardForm()">Add Card</button>
+
+<div *ngIf="showAddCardForm">
+  <form (submit)="submitAddCardForm()">
+    <label for="cardOwnerName">Card Owner Name:</label>
+    <input type="text" id="cardOwnerName" name="cardOwnerName" [(ngModel)]="newCard.cardOwnerName" required>
+    
+    <label for="cardNumber">Card Number:</label>
+    <input type="text" id="cardNumber" name="cardNumber" [(ngModel)]="newCard.cardNumber" required>
+    
+    <label for="bankName">Bank Name:</label>
+    <input type="text" id="bankName" name="bankName" [(ngModel)]="newCard.bankName" required>
+    
+    <label for="validity">Validity:</label>
+    <input type="date" id="validity" name="validity" [(ngModel)]="newCard.validity" required>
+    
+    <label for="securityCode">Security Code:</label>
+    <input type="text" id="securityCode" name="securityCode" [(ngModel)]="newCard.securityCode" required>  
+
+    <label for="cardId">Card ID:</label>
+    <input type="text" id="cardId" name="cardId" [(ngModel)]="newCard.cardId" required> 
+
+    
+    
+    
+    <button type="submit">Submit</button>
+  </form>
+</div> 
+
+<!-- Edit Card Form -->
+<div *ngIf="editFormVisible">
+  <h2>Edit Card</h2>
+  <form (ngSubmit)="editCard()">
+    <div>
+      <label for="editCardOwnerName">Card Owner Name:</label>
+      <input type="text" id="editCardOwnerName" name="editCardOwnerName" [(ngModel)]="editCardForm.cardOwnerName" required>
+    </div>
+    <div>
+      <label for="editCardNumber">Card Number:</label>
+      <input type="text" id="editCardNumber" name="editCardNumber" [(ngModel)]="editCardForm.cardNumber" required>
+    </div>
+    <div>
+      <label for="editBankName">Bank Name:</label>
+      <input type="text" id="editBankName" name="editBankName" [(ngModel)]="editCardForm.bankName" required>
+    </div>
+    <div>
+      <label for="editValidity">Validity:</label>
+      <input type="date" id="editValidity" name="editValidity" [(ngModel)]="editCardForm.validity" required>
+    </div>
+    <button type="submit">Save</button>
+    <button type="button" (click)="editFormVisible = false">Cancel</button>
+  </form>
+</div>
+
+  
+  <!-- Edit Card Form (only shown when editFormVisible is true) -->
+ 
+        
+<!-- Delete Card Form -->
+<!-- Delete Button -->

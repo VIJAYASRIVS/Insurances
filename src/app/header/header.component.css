@@ -1,0 +1,186 @@
+/*header{
+    background-color:rgb(63, 62, 62);
+    padding:10px 0;  
+    animation:colorCycle 4s linear infinite;
+    transition: background-color 0.3s ease;
+    
+
+} 
+
+.container
+{
+    display:flex;
+    justify-content: center;
+    align-items:left; 
+    padding: 0 20px;
+    width:1200px;
+    height:200px;
+} 
+
+.img1
+{
+    width:5rem;
+    height:4rem; 
+    display:flex;
+    margin-left:10rem;
+    margin-right: 10px;
+    margin-top:2px;
+    margin-bottom:10px; 
+    
+    transform: scale(1.1); 
+    
+} 
+
+@keyframes colorCycle 
+{
+    0%
+    {
+        background-color: rgb(85, 84, 84);
+    }  
+
+    50%
+    {
+        background-color: rgb(19, 18, 18);
+
+    } 
+    100%
+    {
+        background-color: rgb(163, 163, 163);
+    } 
+} 
+
+.img2
+{
+    display:flex; 
+    width: 5rem;
+    height:5rem; 
+    margin-top:100px; 
+    margin:0;
+    
+ 
+} 
+
+h1{
+    
+    color: aliceblue; 
+   
+
+} 
+
+nav{
+    
+    margin-top:150px;
+    
+    
+}
+
+nav a{ 
+    
+    
+    color:white;
+    text-decoration: none; 
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace; 
+    
+    font-size:20px;
+    margin-right:20px; 
+    
+    font-weight: 500;
+    
+    
+
+
+}  
+
+
+
+nav a:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust padding for hover effect */
+    /*font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth effect 
+}*/  
+
+
+header {
+    background-color: rgb(63, 62, 62);
+    padding: 10px 0;
+    animation: colorCycle 4s linear infinite;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px;
+    max-width: 1200px; 
+    height: 100px;
+    margin: 0 auto; 
+}
+
+
+.img1 {
+    width: auto;
+    height: auto;
+    margin-left: 500px;
+    margin-right: 50px; 
+    margin-top:50px;
+    margin-bottom:50px;
+
+
+}
+
+
+.img2 {
+    width: 5rem;
+    height: 5rem; 
+    margin-right: auto;
+}
+
+
+h1 {
+    color: aliceblue;
+    margin: 0; 
+}
+
+
+nav {
+    margin-top: 20px; 
+    margin-right:auto;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+
+nav a:hover {
+    color: white;
+    background-color: rgb(216, 8, 8);
+    cursor: pointer;
+}
+
+
+@keyframes colorCycle {
+    0% {
+        background-color: rgb(85, 84, 84);
+    }
+    50% {
+        background-color: rgb(19, 18, 18);
+    }
+    100% {
+        background-color: rgb(163, 163, 163);
+    }
+}
+
+
