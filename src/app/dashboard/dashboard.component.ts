@@ -20,7 +20,7 @@ OnInit {
 
     if (currentUserString) {
       this.user = JSON.parse(currentUserString);
-      console.log('it shows details');
+      console.log('it shows details:');
     } else {
       // Handle case when user details are not found in local storage
       console.error('User details not found in local storage.');
