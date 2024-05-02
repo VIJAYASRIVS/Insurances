@@ -125,7 +125,7 @@ export class PaymentComponent {
        // alert('Card deleted successfully , please refresh and login again');
       },
       (error) => { 
-        alert('Card deleted successfully , please refresh and login again');
+        alert('Card deleted successfully now , please refresh and login again');
         //console.error('Error deleting card:', error);
         // Handle error
       }
